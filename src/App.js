@@ -3,20 +3,25 @@ function Fruits({fav}) {
 }
 
 const fruitsILike = [
-  {name: "popo"},
-  {name: "apple"},
-  {name: "orange"},
-  {name: "cherry"},
-  {name: "coconut"}
+  {id: 1, name: "popo"},
+  {id: 2, name: "apple"},
+  {id: 3, name: "orange"},
+  {id: 4, name: "cherry"},
+  {id: 5, name: "coconut"}
 ];
+
+function renderFruit(menu) {
+  //console.log(menu);
+  return <Fruits key={menu.id} fav={menu.name} />;
+}
 
 function App() {
   return (
     <div className="App">
       <h1>Hello Chopkiri!</h1>
       <Fruits fav="podo" />
-      {fruitsILike.map(dessert => 
-        <Fruits fav={dessert.name} />)}
+      {console.log(fruitsILike.map(renderFruit))}
+      {fruitsILike.map(renderFruit)}
     </div>
   );
 }
