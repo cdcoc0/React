@@ -1,7 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 class App extends React.Component {
+  
+  // constructor(props) {
+  //   super(props);
+  //   console.log("constructor");
+  // };
+  
   state = {
     count: 0
   };
@@ -14,7 +19,21 @@ class App extends React.Component {
     console.log("minus");
     this.setState({count: this.state.count - 1});
   };
+
+  componentDidMount() {
+    console.log("component rendered");
+  };
+
+  componentDidUpdate() {
+    console.log("updated");
+  };
+
+  componentWillUnmount() {
+    console.log("component die");
+  };
+
   render() {
+    console.log("render");
     return (
       <div>
         <h1>class component executed {this.state.count}</h1>
